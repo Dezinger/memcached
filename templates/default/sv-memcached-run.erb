@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+USER="<%= @options[:user] %>"
+MAX_CONNECTIONS="<%= @options[:max_connections] %>"
+MEMORY="<%= @options[:memory] %>"
+PORT="<%= @options[:port] %>"
+LISTEN_ADDR="<%= @options[:listen_address] %>"
+CUSTOM_ARGS="<%= @options[:custom_args].join(" ") %>"
+
+exec chpst -u $USER:$USER /usr/bin/memcached -l $LISTEN_ADDR -p $PORT -m $MEMORY -c $MAX_CONNECTIONS $CUSTOM_ARGS 2>&1
