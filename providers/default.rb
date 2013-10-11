@@ -60,7 +60,9 @@ action :create do
   end
 
   runit_service "memcached_#{instance_name}" do
-    template_name "memcached"
+    run_template_name "memcached"
+    log_template_name "memcached"
+    default_logger true
     cookbook "memcached"
     options( :instance_name => instance_name,
              :listen_address => listen_address,
