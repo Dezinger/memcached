@@ -28,10 +28,10 @@
 actions :create
 default_action :create
 
-attribute :instance_name, :kind_of => String, :name_attribute => true
-attribute :listen_address, :kind_of => String, :default => "127.0.0.1"
-attribute :port, :kind_of => Integer, :default => 11211
-attribute :user, :kind_of => String, :default => "memcache"
-attribute :memory, :kind_of => Integer, :default => 64
-attribute :max_connections, :kind_of => Integer, :default => 1024
-attribute :custom_args, :kind_of => Array, :default => []
+attribute :instance_name, kind_of: String, name_attribute: true
+attribute :listen_address, kind_of: String, default: '127.0.0.1'
+attribute :port, kind_of: Integer, default: 11_211
+attribute :user, kind_of: String, default: 'memcache'
+attribute :memory, kind_of: Integer, default: 64
+attribute :max_connections, kind_of: Integer, default: 1024
+attribute :custom_args, kind_of: Array, default: []

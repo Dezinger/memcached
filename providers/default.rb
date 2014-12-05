@@ -26,7 +26,7 @@
 #
 
 def whyrun_supported?
-    true
+  true
 end
 
 action :create do
@@ -39,39 +39,41 @@ action :create do
   max_connections = new_resource.max_connections
   custom_args = new_resource.custom_args
 
-  package "memcached" do
+  package 'memcached' do
     action :install
   end
 
-  package "libmemcache-dev" do
+  package 'libmemcache-dev' do
     action :install
   end
 
-  file "/etc/default/memcached" do
-    content "ENABLE_MEMCACHED=no"
-    mode 0644
-    owner "root"
-    group "root"
+  file '/etc/default/memcached' do
+    content 'ENABLE_MEMCACHED=no'
+    mode '0644'
+    owner 'root'
+    group 'root'
   end
 
-  service "memcached" do
-    status_command "/etc/init.d/memcached status"
-    action [ :disable, :stop ]
+  service 'memcached' do
+    status_command '/etc/init.d/memcached status'
+    action [:disable, :stop]
   end
 
   runit_service "memcached_#{instance_name}" do
-    run_template_name "memcached"
-    log_template_name "memcached"
+    run_template_name 'memcached'
+    log_template_name 'memcached'
     default_logger true
-    cookbook "memcached"
-    options( :instance_name => instance_name,
-             :listen_address => listen_address,
-             :port => port,
-             :memory => memory,
-             :user => user,
-             :max_connections => max_connections,
-             :custom_args => custom_args
+    cookbook 'memcached'
+    options(instance_name: instance_name,
+            listen_address: listen_address,
+            port: port,
+            memory: memory,
+            user: user,
+            max_connections: max_connections,
+            custom_args: custom_args
            )
   end
+
+  new_resource.updated_by_last_action(true)
 
 end
