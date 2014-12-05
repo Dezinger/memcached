@@ -1,12 +1,14 @@
 name             'memcached'
 maintainer       'LLC Express 42'
-maintainer_email 'info@express42.com'
+maintainer_email 'cookbooks@express42.com'
 license          'MIT'
-description      'Installs/Configures memcached'
+description      'Provides LWRP for managing multiple memcached instances'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '1.1.0'
+version          '1.1.1'
 
-supports          'debian'
-supports          'ubuntu'
+depends          'runit'
 
-depends           'runit'
+recipe           'memcached::default', 'Do nothing.'
+
+supports         'debian'
+supports         'ubuntu'
