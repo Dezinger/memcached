@@ -1,6 +1,6 @@
 # Description
 
-Provides LWRP for managing multiple memcached instances
+Provides LWRP for managing multiple memcached instances.
 
 # Requirements
 
@@ -12,10 +12,6 @@ Provides LWRP for managing multiple memcached instances
 ## Cookbooks:
 
 * runit
-
-# Attributes
-
-*No attributes defined*
 
 # Recipes
 
@@ -33,13 +29,18 @@ Provides LWRP for managing multiple memcached instances
 
 ### Attribute Parameters
 
-- instance_name:
+- instance_name: Name of the instance.
 - listen_address:  Defaults to <code>"127.0.0.1"</code>.
 - port:  Defaults to <code>11211</code>.
 - user:  Defaults to <code>"memcache"</code>.
 - memory:  Defaults to <code>64</code>.
 - max_connections:  Defaults to <code>1024</code>.
 - custom_args:  Defaults to <code>[]</code>.
+
+# Usage
+
+See fixture cookbook in `tests/fixtures/cookbooks`.
+
 
 # License and Maintainer
 
