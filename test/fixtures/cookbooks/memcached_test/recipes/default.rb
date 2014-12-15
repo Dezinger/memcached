@@ -1,3 +1,4 @@
+include_recipe 'apt'
 include_recipe 'runit'
 
 memcached 'test1' do
