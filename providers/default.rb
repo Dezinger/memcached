@@ -30,7 +30,6 @@ def whyrun_supported?
 end
 
 action :create do
-
   instance_name = new_resource.instance_name
   listen_address = new_resource.listen_address
   port = new_resource.port
@@ -75,5 +74,4 @@ action :create do
   end
 
   new_resource.updated_by_last_action(true)
-
 end
