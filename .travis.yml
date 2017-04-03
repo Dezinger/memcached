@@ -4,5 +4,6 @@ rvm:
 script:
   - bundle exec cookstyle
   - bundle exec foodcritic --contex --epic-fail any .
+sudo: false
 notifications:
   flowdock: d4fbb65de6c9c868a2dfc4b38fbd34c1
