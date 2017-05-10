@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/express42-cookbooks/memcached.svg?branch=master)](https://travis-ci.org/express42-cookbooks/memcached)
+[![Build Status](https://travis-ci.org/express42/memcached.svg?branch=master)](https://travis-ci.org/express42/memcached)
 
 # Description
 
