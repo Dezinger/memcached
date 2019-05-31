@@ -44,10 +44,6 @@ action :create do
     action :install
   end
 
-  package 'libmemcache-dev' do
-    action :install
-  end
-
   file '/etc/default/memcached' do
     content 'ENABLE_MEMCACHED=no'
     mode '0644'

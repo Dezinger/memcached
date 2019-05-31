@@ -4,10 +4,6 @@ describe package('memcached') do
   it { should be_installed }
 end
 
-describe package('libmemcache-dev') do
-  it { should be_installed }
-end
-
 describe service('memcached') do
   it { should_not be_enabled }
   it { should_not be_running }
